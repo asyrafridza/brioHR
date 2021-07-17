@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+body,
+body .p-component {
+  margin: 0;
+  font-family: "Roboto";
+  background-color: #ffffff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.item-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ui-button-danger {
+  background-color: #ef6360 !important;
+  border-color: #ef6360 !important;
+}
+
+.ui-button-danger:hover {
+  background-color: #fbe260 !important;
+  border-color: #fbe260 !important;
+}
+
+.text-secondary {
+  color: #7a8a9b;
+}

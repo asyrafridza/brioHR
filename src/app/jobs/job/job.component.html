@@ -1,0 +1,70 @@
+<div class="p-d-flex p-ai-center p-flex-column">
+  <p-card class="job-card">
+    <div class="p-grid p-justify-center p-align-center job-card-content">
+      <div class="p-col-6 p-md-6 p-sm-12 job-section">
+        <b>{{ job?.title }}</b>
+        <div class="p-grid p-mt-2 p-justify-center p-align-center">
+          <div class="p-col-12 text-secondary">
+            {{ job?.updatedAt | fromNow }}
+            <span *ngIf="job?.level" class="bullet">&#8226;</span>
+            {{ job?.level }}
+          </div>
+        </div>
+      </div>
+      <div class="p-col-4 p-md-4 p-sm-12 item-center p-mt-sm-5 p-mb-sm-2">
+        <p>
+          <i class="pi pi-map-marker map-marker-icon"></i>{{ job?.location }}
+        </p>
+      </div>
+      <div class="p-col-2 p-md-2 p-sm-12 item-center">
+        <button
+          pButton
+          type="button"
+          label="Edit"
+          class="ui-button-danger"
+          (click)="openDialog($event, job)"
+        ></button>
+      </div>
+    </div>
+  </p-card>
+</div>
+<p-dialog
+  header="Edit Job"
+  [(visible)]="displayDialog"
+  styleClass="edit-job-dialog"
+  [modal]="true"
+>
+  <form [formGroup]="jobForm">
+    <div class="ui-fluid">
+      <div class="p-field">
+        <label for="title">Title</label>
+        <input id="title" type="text" formControlName="title" pInputText />
+      </div>
+      <div class="p-field">
+        <label for="location">Location</label>
+        <input
+          id="location"
+          type="text"
+          formControlName="location"
+          pInputText
+        />
+      </div>
+      <div class="p-field">
+        <label for="level">Level</label>
+        <input
+          #levelRef
+          id="level"
+          type="text"
+          formControlName="level"
+          pInputText
+        />
+      </div>
+      <button
+        pButton
+        type="button"
+        label="Save"
+        (click)="updateJob(jobForm.value)"
+      ></button>
+    </div>
+  </form>
+</p-dialog>

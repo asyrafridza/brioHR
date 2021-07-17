@@ -1,0 +1,42 @@
+<form [formGroup]="jobListForm">
+  <div class="ui-fluid job-list-container">
+    <div class="p-field p-grid">
+      <div class="p-col-12">
+        <input
+          type="text"
+          placeholder="Search for jobs"
+          formControlName="searchString"
+          pInputText
+        />
+      </div>
+      <ng-container *ngFor="let department of departments">
+        <div class="p-col-6 header-item-title">
+          <b>
+            <i class="pi pi-briefcase briefcase-icon"></i>
+            {{ department | uppercase }}
+          </b>
+        </div>
+        <div class="p-col-6 header-item-openings">
+          <h5 class="text-secondary">
+            {{ jobsByDepartment[department] | jobOpeningsCount: searchString }}
+            openings
+          </h5>
+        </div>
+        <ng-container
+          *ngFor="
+            let job of jobsByDepartment[department] | jobFilter: searchString
+          "
+        >
+          <div class="p-col-12 item-center p-mb-3">
+            <app-job
+              style="width: 100%"
+              [job]="job"
+              [searchString]="searchString"
+              (jobItemChange)="updateJobList($event)"
+            ></app-job>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</form>

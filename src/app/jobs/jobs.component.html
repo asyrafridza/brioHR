@@ -1,0 +1,9 @@
+<div id="jobOpenings" class="p-d-flex p-ai-center p-flex-column jobs-content">
+  <div>
+    <h1>Job Openings</h1>
+    <h5 class="text-secondary text-center">{{ totalJobOpenings || 0 }} jobs</h5>
+  </div>
+  <div>
+    <app-job-list [jobs]="jobs"></app-job-list>
+  </div>
+</div>

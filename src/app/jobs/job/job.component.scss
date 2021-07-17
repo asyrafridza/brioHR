@@ -1,0 +1,43 @@
+.bullet {
+  margin: 0 5px;
+}
+
+.map-marker-icon {
+  position: relative;
+  top: 3px;
+  right: 3px;
+}
+
+.job-card {
+  width: 100%;
+}
+
+.job-card-content {
+  padding: 1em;
+}
+
+:host ::ng-deep .edit-job-dialog {
+  width: 35vw;
+}
+
+@media screen and (max-width: 992px) {
+  :host ::ng-deep .edit-job-dialog {
+    width: 45vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :host ::ng-deep .edit-job-dialog {
+    width: 55vw;
+  }
+
+  .job-section {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  :host ::ng-deep .edit-job-dialog {
+    width: 75vw;
+  }
+}

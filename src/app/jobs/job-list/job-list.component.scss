@@ -1,0 +1,20 @@
+.job-list-container {
+  width: 60vw;
+}
+
+.header-item-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header-item-openings {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.briefcase-icon {
+  position: relative;
+  top: 2px;
+}

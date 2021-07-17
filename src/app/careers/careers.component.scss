@@ -1,0 +1,61 @@
+.banner {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 43%,
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("/assets/img/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
+  height: 300px;
+  width: 100vw;
+}
+
+.banner-text {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.banner-text > h1 {
+  color: #ffffff;
+}
+
+.banner-text > h5 > a {
+  color: #fbe260;
+}
+
+.intro {
+  text-align: justify;
+  width: 60vw;
+}
+
+.jobs-content {
+  position: relative;
+  top: 15em;
+  margin-bottom: 18em;
+}
+
+@media screen and (max-width: 992px) {
+  .jobs-content {
+    position: relative;
+    top: 20em;
+    margin-bottom: 25em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .jobs-content {
+    position: relative;
+    top: 30em;
+    margin-bottom: 30em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .jobs-content {
+    position: relative;
+    top: 50em;
+    margin-bottom: 55em;
+  }
+}
